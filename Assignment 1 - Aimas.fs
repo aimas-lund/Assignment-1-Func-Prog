@@ -23,8 +23,7 @@ type Count<'a when 'a:equality> = ('a*int) list;;
 
 //Version 1.2
 
-let rec insert a =
-    function
+let rec insert a = function
     | [] -> [(a,1)]
     | (x,y)::ys -> if a=x then (x,y+1)::ys
                    else (x,y)::(insert a ys);;
